@@ -26,11 +26,13 @@ export const NAV_ITEMS: NavItem[] = [
   { name: "Report", href: "/report" },
 ];
 
+export const GROUP_NUMBER = "C10";
+
 export const TEAM_MEMBERS: TeamMember[] = [
-  { name: "Mohammad Emon" },
-  { name: "Tashfin Ajwad" },
-  { name: "Shaheed Rahman" },
-  { name: "Al Mahee Khan" },
+  { name: "Mohammad Emon", id: "200021332" },
+  { name: "Tashfin Ajwad", id: "200021335" },
+  { name: "Shaheed Rahman", id: "200021336" },
+  { name: "Al Mahee Khan", id: "200021342" },
   { name: "MD Arefin Rabbi Emon" },
 ];
 

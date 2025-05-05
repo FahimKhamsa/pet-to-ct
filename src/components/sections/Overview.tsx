@@ -7,6 +7,7 @@ import {
   INSTITUTION,
   COURSE,
   SUBMISSION_DATE,
+  GROUP_NUMBER,
 } from "../../data/constants";
 
 const Overview: React.FC = () => {
@@ -77,7 +78,7 @@ const Overview: React.FC = () => {
                   <ul className="space-y-1">
                     {TEAM_MEMBERS.slice(0, 4).map((member) => (
                       <li key={member.name} className="text-neutral-800">
-                        {member.name}
+                        {member.name} {member.id && `(${member.id})`}
                       </li>
                     ))}
                   </ul>
@@ -87,6 +88,15 @@ const Overview: React.FC = () => {
 
             {/* Right Column - Project Details */}
             <div className="space-y-6">
+              <div>
+                <h4 className="text-sm font-medium text-neutral-500 mb-2">
+                  Group Number
+                </h4>
+                <div className="bg-neutral-50 p-4 rounded-lg">
+                  <p className="text-neutral-800 font-medium">{GROUP_NUMBER}</p>
+                </div>
+              </div>
+
               <div>
                 <h4 className="text-sm font-medium text-neutral-500 mb-2">
                   Institution
