@@ -20,8 +20,10 @@ export const NAV_ITEMS: NavItem[] = [
   { name: "Methodology", href: "/methodology" },
   { name: "Results", href: "/results" },
   { name: "Gallery", href: "/gallery" },
+  { name: "Ethics", href: "/ethics" },
   { name: "Future Work", href: "/future-work" },
   { name: "Code", href: "/code" },
+  { name: "Report", href: "/report" },
 ];
 
 export const TEAM_MEMBERS: TeamMember[] = [

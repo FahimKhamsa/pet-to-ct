@@ -27,6 +27,19 @@ const Header: React.FC = () => {
   const isHomePage = location.pathname === "/";
   const shouldUseTransparentStyle = isHomePage && !scrolled;
 
+  const handleNavClick = (href: string) => {
+    if (location.pathname === href) {
+      // If clicking on the current page's nav item, animate scroll to top
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      // If navigating to a different page, instant scroll to top
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -37,7 +50,11 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2">
+          <Link
+            to="/"
+            className="flex items-center gap-2"
+            onClick={() => handleNavClick("/")}
+          >
             <Brain
               size={32}
               className={`transition-colors duration-300 ${
@@ -65,6 +82,7 @@ const Header: React.FC = () => {
                         ? "text-white hover:text-primary-200"
                         : "text-neutral-700 hover:text-primary-600"
                     } ${location.pathname === item.href ? "font-medium" : ""}`}
+                    onClick={() => handleNavClick(item.href)}
                   >
                     {item.name}
                   </Link>
@@ -105,6 +123,7 @@ const Header: React.FC = () => {
                       ? "bg-primary-50 text-primary-600 font-medium"
                       : ""
                   }`}
+                  onClick={() => handleNavClick(item.href)}
                 >
                   {item.name}
                 </Link>

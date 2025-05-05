@@ -8,9 +8,23 @@ import {
   NAV_ITEMS,
   TEAM_MEMBERS,
 } from "../../data/constants";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer: React.FC = () => {
+  const location = useLocation();
+
+  const handleNavClick = (href: string) => {
+    if (location.pathname === href) {
+      // If clicking on the current page's nav item, animate scroll to top
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      // If navigating to a different page, instant scroll to top
+      window.scrollTo(0, 0);
+    }
+  };
   return (
     <footer className="bg-neutral-800 text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
@@ -50,6 +64,7 @@ const Footer: React.FC = () => {
                   <Link
                     to={item.href}
                     className="text-neutral-300 hover:text-primary-300 transition-colors duration-200 flex items-center gap-1"
+                    onClick={() => handleNavClick(item.href)}
                   >
                     <ExternalLink size={14} />
                     <span>{item.name}</span>

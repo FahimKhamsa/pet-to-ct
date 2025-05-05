@@ -5,6 +5,7 @@ import MethodologySection from "../components/sections/Methodology";
 import Results from "../components/sections/Results";
 import Gallery from "../components/sections/Gallery";
 import FutureWork from "../components/sections/FutureWork";
+import EthicalConsiderations from "../components/sections/EthicalConsiderations";
 
 const Home: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
       <MethodologySection />
       <Results />
       <Gallery limit={3} />
+      <EthicalConsiderations />
       <FutureWork />
     </div>
   );
